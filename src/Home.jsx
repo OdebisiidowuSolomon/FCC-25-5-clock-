@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 import "./styles.css";
 import { allGiftCards } from "./data";
+import { Link } from "react-router-dom";
 
 function Home({cur}) {
   const [action, setAction] = useState(null);
@@ -92,12 +93,13 @@ function Home({cur}) {
             <div
             key={card.id}
               className="home__card"
-              onClick={() => handlePageChange(card.title)}
               style={{ backgroundColor: handleRandomColor() }}
             >
+              <Link to={`/${card.title.split(' ').join('-')}`}>
               <div className="backdrop"></div>
               <h3>{card.title}</h3>
               <p>View Currencies >> </p>
+              </Link>
             </div>
           ))}
         </div>
@@ -107,3 +109,6 @@ function Home({cur}) {
 }
 
 export default Home;
+
+
+// https://OdebisiidowuSolomon.github.io/Kodecamp-react-task-1/

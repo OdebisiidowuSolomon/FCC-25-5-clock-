@@ -1,10 +1,25 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Sidebar from './Sidebar'
+import { allGiftCards } from './data';
 
-function Currency({curr}) {
-    if(!curr) {
-        window.location.pathname = '/'
-    }
+
+function Currency(props) {
+
+    const [curr, setCurr] = useState([])
+    const [pathname] = useState(window.location.pathname)
+
+    useEffect(() => {
+        // console.log(path);
+        if(pathname) {
+          const path = window.location.hash.split('#')[1].split('/')[1].split('-').join(' ')
+          let card = allGiftCards.filter(card => card.title ===path)
+          if(card) {
+            console.log(card)
+            setCurr(card)
+          }
+        }
+      }, [pathname])
+
   return (
     <div className='currency'>
         <Sidebar cur={curr}/>
@@ -29,7 +44,7 @@ function Currency({curr}) {
 
                 <div className="currs">
                     {curr[0]?.currencies?.map(card =>
-                    <span className="curr">{card}</span>
+                    <span className="curr" key={card}>{card}</span>
                         )}
                 </div>
             </div>

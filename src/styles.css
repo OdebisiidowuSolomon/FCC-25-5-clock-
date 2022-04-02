@@ -21,6 +21,12 @@ button {
   color: #fff;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+  z-index: 1;
+}
+
 .sidebar {
   height: 100%;
   flex: 0.3;
@@ -42,11 +48,14 @@ button {
   margin: 0 0 5rem 0;
 }
 
-.sidebar__link {
+.sidebar__link,
+.sidebar__link a
+ {
     margin-bottom: 2rem;
+    color: #ccc;
 }
-.sidebar__link:nth-child(3),
-.sidebar__link:nth-child(4)
+.sidebar__link:nth-child(3) a,
+.sidebar__link:nth-child(4) a
  {
     color: #37394d !important;
     cursor: not-allowed;
@@ -56,20 +65,24 @@ button {
     display: flex;
 }
 
+.sidebar__active a {
+  color: #fff !important;
+}
+
 .sidebar__active::before {
     content: '';
     display: inline-flex;
     vertical-align: middle;
     height: .5rem;
     width: .5rem;
-    margin-right: 1rem;
     background: #05c231;
     border-radius: 50%;
 }
 
-.sidebar__links :not(.sidebar__active) {
+
+.sidebar__links :not(.sidebar__link) {
     margin-left: 1.5rem;
-    color: #ccc;
+    /* color: red !important; */
 }
 
 
