@@ -1,23 +1,37 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Currency from './currency';
+import { allGiftCards } from './data';
+import Home from './Home';
 
 function App() {
+
+  const [pathname] = useState(window.location.pathname)
+  const [curr, setCurr] = useState(null)
+
+  useEffect(() => {
+    if(pathname) {
+      const path = pathname.split('/')[1].split('-').join(' ')
+      let card = allGiftCards.filter(card => card.title ===path)
+      if(card) {
+        console.log(card)
+        setCurr(card)
+      }
+    }
+  }, [pathname])
+
+
+  const renderComponent = () => {
+    if(curr?.length > 0){
+      return <Currency curr= {curr}/>
+    } else {
+      return <Home curr = {curr}/>
+    }
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {renderComponent()}
     </div>
   );
 }
