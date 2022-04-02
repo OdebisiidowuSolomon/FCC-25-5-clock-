@@ -95,8 +95,8 @@ function Home({cur}) {
               className="home__card"
               style={{ backgroundColor: handleRandomColor() }}
             >
-              <Link to={`/${card.title.split(' ').join('-')}`}>
               <div className="backdrop"></div>
+              <Link to={`/${card.title.split(' ').join('-')}`}>
               <h3>{card.title}</h3>
               <p>View Currencies >> </p>
               </Link>
