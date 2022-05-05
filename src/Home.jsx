@@ -98,7 +98,7 @@ function Home({cur}) {
               <div className="backdrop"></div>
               <Link to={`/${card.title.split(' ').join('-')}`}>
               <h3>{card.title}</h3>
-              <p>View Currencies >> </p>
+              <p>View Currencies {`>>`} </p>
               </Link>
             </div>
           ))}
