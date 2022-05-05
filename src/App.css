@@ -2,75 +2,39 @@ body {
     font-family: 'Nunito', sans-serif;
 }
 
-.calculator {
-    width: 300px;
-    padding: 1rem 0;
-    max-width: 70%;
-    min-width: 300px;
-    display: flex;
-    margin: auto;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#drum-machine {
+    width: 500px;
     background-color: whitesmoke;
-    margin-top: 20vh;
-}
-
-.row {
+    padding: 1rem;
+    justify-content: space-around;
+    margin: auto;
     display: flex;
-    flex: 1;
 }
 
-.row:nth-child(1) .Button {
-    color: #a58d2c;
-    background-color: #ffeec1;
+.drumpads {
+    width: 70%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    
 }
-.row .Button:nth-child(4) {
-    color: #a58d2c;
-    background-color: #ffeec1;
-}
-
-#equals {
-    color: #ce9418;
-    background-color: #ffbe42;
-}
-
-.Button {
-    margin: .35rem;
-    padding: .7rem;
-    cursor: pointer;
-    width: 2rem;
-    height: 2rem;
-    border-radius: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: 900;
-    color: #131313;
-    background-color: #efefef;
-    background-color: rgb(197, 194, 194);
-    align-self: stretch;
-}
-
-.Button#zero  {
-    flex: 1;
-}
-
-.screen {width: 100%;}
 
 #display {
-    height: 60px;
-    width: 100%;
-    border: none;
-    font-size: 20px;
-    padding: .5rem 2rem;
-    box-sizing: border-box;
-    text-align: end;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#output {
+
+.drum-pad {
+    box-shadow: 2px 3px 5px;
+    width: 40px;
+    height: 40px;
+    padding: 1rem;
     background-color: #ccc;
-    height: 30px;
-    padding: .5rem 2rem;
-    box-sizing: border-box;
-    text-align: end;
+    margin: .4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 10px;
 }
