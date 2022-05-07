@@ -1,40 +1,70 @@
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: Nunito, sans-serif;
+    font-size: 18px;
+    background-color: #ccc;
 }
 
-#drum-machine {
+button {
+    margin: .5rem;
+    padding: .4rem .6rem;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    flex-flow: column;
+    margin: auto;
+    margin-top: 3rem;
+    padding: .7rem;
     width: 500px;
     background-color: whitesmoke;
-    padding: 1rem;
-    justify-content: space-around;
-    margin: auto;
-    display: flex;
+    border-radius: 10px;
 }
 
-.drumpads {
-    width: 70%;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+.controls {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
     
 }
 
-#display {
-    width: 30%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#break, #session {
+    padding: 1rem;
+    text-align: center;
 }
 
-.drum-pad {
-    box-shadow: 2px 3px 5px;
-    width: 40px;
-    height: 40px;
-    padding: 1rem;
-    background-color: #ccc;
-    margin: .4rem;
+#break span, #session span{
+    margin: .3rem;
+    font-size: 1.35rem;
+}
+
+.inner {
+    padding: .7rem;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 9px;
+}
+
+.inner #timer-left {
+    font-size: 1.8rem;
+}
+
+.outer {
+    text-align: center;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+}
+
+.outer div {
+    margin: .6rem .8rem .9rem 0;
+}
+
+#break-decrement,
+#break-increment,
+#session-decrement,
+#session-increment,
+#start_stop,
+#reset {
     cursor: pointer;
-    border-radius: 10px;
 }
